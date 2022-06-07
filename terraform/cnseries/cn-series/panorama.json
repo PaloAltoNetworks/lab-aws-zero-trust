@@ -1,0 +1,46 @@
+{
+    "apiVersion": "v1",
+    "data": {
+        "ca.crt": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM1ekNDQWMrZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeU1EVXhNekE1TVRJeE9Gb1hEVE15TURVeE1EQTVNVEl4T0Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBT0FKCjF1ZTMwTjhFVFpHTFloemo3ZkZPaW9jTk1ZZXpBNTdYNG40aFdYUGxRSEwxU1FmVUZpeVEyWVFNYW1ZQTZsMWUKdlV3SDNrRnp6dUJoNmxnZHlaR1o3cjJWVjZiMnV6Yk9FUXJRZVpnRnhkaUFadi80b2w5eEpBWWRDamZoRDQvagpiOTZJd0pmcmhHK2VZTFJIdFlGZUwwSE5XUWZPNWFNR0pYZzd6dU1nVGtjV0lzOU1yc3ZuejRXU1RGV1pzL2VtCm9GZWlNVGxoSnV4SC95R2o5ZytKZ3llSUlTMHgyWU9nMkhaUWxJc3NFMVN6S0x0NjlVZ0pxTGxWbDhzN1ZOckkKYXVKMDhqLzZsVDFQMDdlajBJd0I5SXFxM29PZmV4VmFQQmpQNC9BNGlTV3E5K3pzTys5N0g2L2dzZ3ZxMHV6YwpvbTdRemNTMmdmSzcrTFlpSlZVQ0F3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZGYStFaEpoRHBIZEsvUmRZN3NiU29sdk45Q3ZNQTBHQ1NxR1NJYjMKRFFFQkN3VUFBNElCQVFCTEJzR3RCb09Qa3hGbVFlS1o2VmlINmZiRlBVWU9UTDBrZitWQlNjTkxac2YveUx2QgpzaXhkdEt2K1E2eUVqRnVGaEZmWmNHZ2wvdUpwNDh6d0pmVzdCWndjOHAxSktISDNyVmpPVFRPRlVXa1dUVkhDClBsZUJUMENQZ1ZmRi92cXhhUExNLzZBYWlCTGNvK0pxRWhaTXdGVmN6cS9uZGIrZUY5WjREMzV4QjE2bllJa1MKclh2b1k1b0tCNXJxMzRJYmFNbnpiZXpOaW9EOVhSU005dG5jWVM3ZmVtUmhkaTVhODZETllGMzU1SnZzSm1MQgovcFV1aGx2S1M0MTdyT25xNVBWeTJyZ0ZDbUJocXRLd0dUUW5keFFqeWsweE5DOHFFdFA1UXdtb0NnU0l0ZGtmCm5NL1loSVlGNjgwaVEvKzNLUVpFc2ZSRXh3TVJEV3g1WndnbwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+        "namespace": "a3ViZS1zeXN0ZW0=",
+        "token": "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNklqVTVkMGRFYTJkTFRuRndlRmg2T1RFeVdqUktZalJvV0ZkSlpVMDFaRXRzVlhSemVUZHhPR3gyUTI4aWZRLmV5SnBjM01pT2lKcmRXSmxjbTVsZEdWekwzTmxjblpwWTJWaFkyTnZkVzUwSWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXVZVzFsYzNCaFkyVWlPaUpyZFdKbExYTjVjM1JsYlNJc0ltdDFZbVZ5Ym1WMFpYTXVhVzh2YzJWeWRtbGpaV0ZqWTI5MWJuUXZjMlZqY21WMExtNWhiV1VpT2lKd1lXNHRjR3gxWjJsdUxYVnpaWEl0ZEc5clpXNHRibWcxWW5ZaUxDSnJkV0psY201bGRHVnpMbWx2TDNObGNuWnBZMlZoWTJOdmRXNTBMM05sY25acFkyVXRZV05qYjNWdWRDNXVZVzFsSWpvaWNHRnVMWEJzZFdkcGJpMTFjMlZ5SWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXpaWEoyYVdObExXRmpZMjkxYm5RdWRXbGtJam9pT0dVelkyTmhNMll0TkdFMk9TMDBZMkUwTFRnd1l6RXROekkyTkRaak5XSmtOV1kwSWl3aWMzVmlJam9pYzNsemRHVnRPbk5sY25acFkyVmhZMk52ZFc1ME9tdDFZbVV0YzNsemRHVnRPbkJoYmkxd2JIVm5hVzR0ZFhObGNpSjkuZlhuQ1dhWjF4SlEzanZBUFZPWW5IOURISHdBZE8wc1A2MzNlZlhBNjkzaUdVZnE4cG04TTQwMUxuZ0w4Wko1SDlyQ21yLTZxT1U1b2l3cERKa3Zhb1VTdEZQd1lCRGpmZDUxRzk0aXI2bFlkWEllM0d3QVpzXzcwRWdEa3ZQUUpwTFZFUzVQYmhtS0VCdi1oTkstS3pfVXJ6SUU4RktQeGJOb3JyN29lWUpsQ2ZpcDVmRUhiTVNSUUJKbU5WSFVNeDNFdVc1bnZlQjFyNThNSl9uN0NYUTE4V2lsQ3V6ckljUUZfcTd0TXRraEVsWkdHTG5HeW9vZlV0cmppbUV0T2Y0SG5ldkpMNFExMEpDd1dWMENKWjJRYXYza2xNbjhLeWVNZmR4YWg5STFGSElwOHFMWXB3ZFhTMmNmVmRJWnhwRGpkVzdDZ3FWZjlpRjg3aUIxNDRR"
+    },
+    "kind": "Secret",
+    "metadata": {
+        "annotations": {
+            "kubernetes.io/service-account.name": "pan-plugin-user",
+            "kubernetes.io/service-account.uid": "8e3cca3f-4a69-4ca4-80c1-72646c5bd5f4"
+        },
+        "creationTimestamp": "2022-05-13T10:18:43Z",
+        "managedFields": [
+            {
+                "apiVersion": "v1",
+                "fieldsType": "FieldsV1",
+                "fieldsV1": {
+                    "f:data": {
+                        ".": {},
+                        "f:ca.crt": {},
+                        "f:namespace": {},
+                        "f:token": {}
+                    },
+                    "f:metadata": {
+                        "f:annotations": {
+                            ".": {},
+                            "f:kubernetes.io/service-account.name": {},
+                            "f:kubernetes.io/service-account.uid": {}
+                        }
+                    },
+                    "f:type": {}
+                },
+                "manager": "kube-controller-manager",
+                "operation": "Update",
+                "time": "2022-05-13T10:18:43Z"
+            }
+        ],
+        "name": "pan-plugin-user-token-nh5bv",
+        "namespace": "kube-system",
+        "resourceVersion": "9774",
+        "uid": "f5d65a18-7bc6-46bd-b06f-a64118d8c311"
+    },
+    "type": "kubernetes.io/service-account-token"
+}

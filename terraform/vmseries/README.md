@@ -485,19 +485,15 @@ The policies will look like this.
 ![](https://lh6.googleusercontent.com/3DiOnz3Itg0DyW45G0XCEXPCgOCZ4551pWD3fmE4xyMbZxitXIaFPc9LSdvzjzqp3xmAfFxoLyemC2tZxvJ5Z9q87GsSrORMUZxikk1vM2Zc_hhk5ag386LSJBQ0QsU3RjC8qfJTIh32u0xb6g)
 
 67. Wait for status to complete.
-
 ![](https://lh3.googleusercontent.com/QoB9oHT_ZIBcnRMLXT9OroCI9jEKS7HZ3vaGc0OdimDwt8LmdRPbngNz772koXuERGQo4KhuPmSh-rf7pi3D6TRw0Q-xs16go9iy5Y6RgzfSYgTA6BLx52Y1mlW3MsGTGvkXWVYCdfl2GJQh3A)
-
-    - If you see the message ‘Not all Commit-All jobs got triggered”, close the window.
-    - On the top right, click on Commit again and select ‘Push to Devices’
-
+    * If you see the message ‘Not all Commit-All jobs got triggered”, close the window.
+    * On the top right, click on Commit again and select ‘Push to Devices’
     ![](https://lh4.googleusercontent.com/Rb9Z4uPL7u5dKLM1ZMrINQTv_e-ZFoAEKdqvfeW7FrAnnMYDRG0Dh-6wl4pT6EKI4GmbXxFJKgqkm9g7TzGfNhybkH9v05q5yOF5og6mULD8q3jzY-ZBUgFderKo1VPK87gEXCW09gf5FE4rAQ)
-
-    - Click in ‘Tasks’ button![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg) on the bottom horizontal bar and ensure that ‘commit all’ job finishes. Click on Close to exit out of the window.
-
+    
+    * Click in ‘Tasks’ button![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg) on the bottom horizontal bar and ensure that ‘commit all’ job finishes. Click on Close to exit out of the window.
     ![](https://lh6.googleusercontent.com/0e_73oUxOEB1XE56HsNgPSLrI2ljHBXSCoCutpYjzheOhVxTkvCdLq8FleP7uLu6NvzYjR3MFWDdqlFYolwIa0GVF5xmmpmP5R14Wg3WWZKtHdWXKoJCPrZ8Ag9yzlX38FeAIWBpgF_wfc_i8A)
-
-    - Ensure that all commit processes are completed by monitoring  ![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg)
+    
+    * Ensure that all commit processes are completed by monitoring  ![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg)
 
 68. Relaunch the attack by navigating to the SSH session on **att-app-server** and issue the command.
 
@@ -548,20 +544,15 @@ In this activity, we will use a policy that has both the profiles set to protect
 ![](https://lh6.googleusercontent.com/3DiOnz3Itg0DyW45G0XCEXPCgOCZ4551pWD3fmE4xyMbZxitXIaFPc9LSdvzjzqp3xmAfFxoLyemC2tZxvJ5Z9q87GsSrORMUZxikk1vM2Zc_hhk5ag386LSJBQ0QsU3RjC8qfJTIh32u0xb6g)
 
 78. Wait for status to complete.
-
 ![](https://lh3.googleusercontent.com/QoB9oHT_ZIBcnRMLXT9OroCI9jEKS7HZ3vaGc0OdimDwt8LmdRPbngNz772koXuERGQo4KhuPmSh-rf7pi3D6TRw0Q-xs16go9iy5Y6RgzfSYgTA6BLx52Y1mlW3MsGTGvkXWVYCdfl2GJQh3A)
-
-    - If you see the message ‘Not all Commit-All jobs got triggered”, close the window.
-    - On the top right click on Commit again and select ‘Push to Devices’
-
+    * If you see the message ‘Not all Commit-All jobs got triggered”, close the window.
+    * On the top right click on Commit again and select ‘Push to Devices’
     ![](https://lh4.googleusercontent.com/Rb9Z4uPL7u5dKLM1ZMrINQTv_e-ZFoAEKdqvfeW7FrAnnMYDRG0Dh-6wl4pT6EKI4GmbXxFJKgqkm9g7TzGfNhybkH9v05q5yOF5og6mULD8q3jzY-ZBUgFderKo1VPK87gEXCW09gf5FE4rAQ)
-
-    - Click in ‘Tasks’ button![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg) on the bottom horizontal bar  and ensure that ‘commit all’ job finishes. Click on Close to exit out of the window.
-
+    
+    * Click in ‘Tasks’ button![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg) on the bottom horizontal bar  and ensure that ‘commit all’ job finishes. Click on Close to exit out of the window.
     ![](https://lh6.googleusercontent.com/0e_73oUxOEB1XE56HsNgPSLrI2ljHBXSCoCutpYjzheOhVxTkvCdLq8FleP7uLu6NvzYjR3MFWDdqlFYolwIa0GVF5xmmpmP5R14Wg3WWZKtHdWXKoJCPrZ8Ag9yzlX38FeAIWBpgF_wfc_i8A)
 
-    - Ensure that all commit processes are completed by monitoring the Tasks ![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg)
-
+    * Ensure that all commit processes are completed by monitoring the Tasks ![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg)
     ![](https://lh4.googleusercontent.com/eBte6FGrDCUszkyKNmS1232ZGpfOGxJbGPp2F2ULkU8Dc4QGQZMYFe8GMKFIGQKZYEjx8fEhujPlEI82CfaId26WHGagIM0kKE-5OHtM19pzKYzlrfRZLuPn-ba3tUPLKOdLX9SAnIVPiL41SQ)
 
 79. Relaunch the attack by navigating to the SSH session on **att-app-server** and issue the command.
@@ -615,16 +606,13 @@ We can use the App-ID for ldap and rmi-iiop to block all RMI and LDAP to or from
 ![](https://lh3.googleusercontent.com/QoB9oHT_ZIBcnRMLXT9OroCI9jEKS7HZ3vaGc0OdimDwt8LmdRPbngNz772koXuERGQo4KhuPmSh-rf7pi3D6TRw0Q-xs16go9iy5Y6RgzfSYgTA6BLx52Y1mlW3MsGTGvkXWVYCdfl2GJQh3A)
 
 87. If you see the message ‘Not all Commit-All jobs got triggered”, close the window.
-
-    - On the top right click on Commit again and select ‘Push to Devices’
-
+    * On the top right click on Commit again and select ‘Push to Devices’
     ![](https://lh4.googleusercontent.com/Rb9Z4uPL7u5dKLM1ZMrINQTv_e-ZFoAEKdqvfeW7FrAnnMYDRG0Dh-6wl4pT6EKI4GmbXxFJKgqkm9g7TzGfNhybkH9v05q5yOF5og6mULD8q3jzY-ZBUgFderKo1VPK87gEXCW09gf5FE4rAQ)
 
-    - Click in ‘Tasks’ button![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg) on the bottom horizontal bar  and ensure that ‘commit all’ job finishes. Click on Close to exit out of the window.
-
+    * Click in ‘Tasks’ button ![](https://lh5.googleusercontent.com/q8fL80u3NhoBExSrntAu77w1gVuusjum2A873gizjBstuXyuiFscnoOScDJalMU552o4LiwZ5_tqSRpZZ-yzF6wvzHQyRYMZgXryrzwe0s79X9AV2uB70n3Yvs_M-BfFzHyQTQ4-bkGZNpdozg) on the bottom horizontal bar  and ensure that ‘commit all’ job finishes. Click on Close to exit out of the window.
     ![](https://lh6.googleusercontent.com/JrB8jyKPymcNypg-AehfNRRqDLrjREkgkbI_paBRe-1Oll56s6gI41QhBVAhoX5DlO43nJQLSIBKUGno-G89T8zuIKhhbP9bg_GGijyXGLsrmljK_VvdOd5pXI4ScHfqpBYhpq44T5Lpe3ud2Q)
 
-    - Ensure that all commit processes are completed by monitoring
+    * Ensure that all commit processes are completed by monitoring
 
 88. Relaunch the attack by navigating to the SSH session on **att-app-server** and issue the command.
 

@@ -54,7 +54,7 @@ function install_aws_iam_authenticator() {
 }
 
 function deploy_panorama() {
-    cd "${HOME}/panw-zero-trust-aws/terraform/panorama"
+    cd "${HOME}/lab-aws-zero-trust/terraform/panorama"
 
     # Initialize terraform
     echo "Initializing directory for lab resource deployment"
@@ -74,7 +74,7 @@ function deploy_panorama() {
 
 function deploy_vmseries_lab() {
     # Assuming that this setup script is being run from the cloned github repo, changing the current working directory to one from where Terraform will deploy the lab resources.
-    cd "${HOME}/panw-zero-trust-aws/terraform/vmseries"
+    cd "${HOME}/lab-aws-zero-trust/terraform/vmseries"
 
     # Initialize terraform
     echo "Initializing directory for lab resource deployment"
@@ -95,7 +95,7 @@ function deploy_vmseries_lab() {
 function deploy_cnseries_lab() {
 
     # Assuming that this setup script is being run from the cloned github repo, changing the current working directory to one from where Terraform will deploy the lab resources.
-    cd "${HOME}/panw-zero-trust-aws/terraform/cnseries"
+    cd "${HOME}/lab-aws-zero-trust/terraform/cnseries"
 
     # Initialize terraform
     echo "Initializing directory for lab resource deployment"

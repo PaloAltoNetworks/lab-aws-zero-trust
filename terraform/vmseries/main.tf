@@ -33,19 +33,50 @@ module "security-vpc" {
     global_tags     = var.global_tags
 }
 
-module "vm-series" {
-  source          = "../modules/vm-series"
-  fw_product_code = var.fw_product_code
-  fw_version      = var.fw_version
-  firewalls       = var.firewalls
-  fw_interfaces   = var.firewall-interfaces
-  ssh_key_name    = module.security-vpc.ssh_key_name
+module "management-vpc" {
+  source          = "../modules/vpc"
+  vpc             = var.management-vpc
   prefix-name-tag = var.prefix-name-tag
-  vpc_name        = module.security-vpc.vpc_name
-  subnet_ids      = module.security-vpc.subnet_ids
-  security_groups = module.security-vpc.security_groups
-  bootstrap_options = var.firewall-bootstrap_options
+  subnets         = var.management-vpc-subnets
+  route-tables    = var.management-vpc-route-tables
+  security-groups = var.management-vpc-security-groups
   global_tags     = var.global_tags
+}
+
+module "panorama" {
+  source          = "../modules/panorama"
+  vpc-name        = module.management-vpc.vpc_name
+  subnet-ids      = module.management-vpc.subnet_ids
+  security-groups = module.management-vpc.security_groups
+  ssh-key-name    = module.management-vpc.ssh_key_name
+  panorama        = var.panorama
+  prefix-name-tag = var.prefix-name-tag
+  global_tags     = var.global_tags
+}
+
+module "vm-series" {
+  source            = "../modules/vm-series"
+  fw_product_code   = var.fw_product_code
+  fw_version        = var.fw_version
+  firewalls         = var.firewalls
+  fw_interfaces     = var.firewall-interfaces
+  ssh_key_name      = module.security-vpc.ssh_key_name
+  prefix-name-tag   = var.prefix-name-tag
+  vpc_name          = module.security-vpc.vpc_name
+  subnet_ids        = module.security-vpc.subnet_ids
+  security_groups   = module.security-vpc.security_groups
+  bootstrap_options = var.firewall-bootstrap_options
+  panorama_ip       = module.panorama.PANORAMA_IP_ADDRESS
+  global_tags       = var.global_tags
+}
+
+locals {
+  vpcs = {
+    "${module.vulnerable-vpc.vpc_details.name}"  : module.vulnerable-vpc.vpc_details,
+    "${module.attack-vpc.vpc_details.name}"      : module.attack-vpc.vpc_details,
+    "${module.security-vpc.vpc_details.name}"    : module.security-vpc.vpc_details,
+    "${module.management-vpc.vpc_details.name}"  : module.management-vpc.vpc_details
+  }
 }
 
 module "gwlb" {
@@ -70,21 +101,29 @@ module "transit-gateway" {
   transit-gateway-routes       = var.transit-gateway-routes
 }
 
-locals {
-  vpcs = {
-    "${module.vulnerable-vpc.vpc_details.name}"  : module.vulnerable-vpc.vpc_details,
-    "${module.attack-vpc.vpc_details.name}"      : module.attack-vpc.vpc_details,
-    "${module.security-vpc.vpc_details.name}"    : module.security-vpc.vpc_details
-  }
-}
-
 module "vpc-routes" {
   source          = "../modules/vpc_routes"
-  vpc-routes      = merge(var.vulnerable-vpc-routes, var.attack-vpc-routes, var.security-vpc-routes)
+  vpc-routes      = merge(var.vulnerable-vpc-routes, var.attack-vpc-routes, var.security-vpc-routes, var.management-vpc-routes)
   vpcs            = local.vpcs
   tgw-ids         = module.transit-gateway.tgw-ids
   ngfw-data-eni   = module.vm-series.ngfw-data-eni
   gwlbe_ids       = module.gwlb.gwlbe_ids
   natgw_ids       = module.security-vpc.natgw_ids
   prefix-name-tag = var.prefix-name-tag
+}
+
+output "PANORAMA_IP_ADDRESS" {
+  value = module.panorama.PANORAMA_IP_ADDRESS
+}
+
+output "FIREWALL_IP_ADDRESS" {
+  value = module.vm-series.firewall-ip
+}
+
+output "VULNERABLE_APP_SERVER" {
+  value = module.vulnerable-vpc.instance_ips["vul-app-server"]
+}
+
+output "ATTACK_APP_SERVER" {
+  value = module.attack-vpc.instance_ips["att-app-server"]
 }

@@ -61,6 +61,6 @@ panorama = {
   subnet_name       = "subnet"
   private_ips       = ["10.4.1.100"]
   security_group    = "panorama-sg"
-  instance_type     = "c5.4xlarge"
+  instance_type     = "m5.2xlarge"
   ami               = "ami-0f1a372841f68f319"
 }

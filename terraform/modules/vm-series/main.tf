@@ -1,7 +1,7 @@
 
 locals {
   panorama_ip_bootstrap = {
-    "panorama-server"     = data.aws_instance.panorama.public_ip
+    "panorama-server"     = var.panorama_ip
   }
 
   bootstrap_options = merge(var.bootstrap_options, local.panorama_ip_bootstrap)
@@ -19,18 +19,6 @@ data "aws_ami" "pa-vm" {
   filter {
     name   = "name"
     values = ["PA-VM-AWS-${var.fw_version}*"]
-  }
-}
-
-data "aws_instance" "panorama" {
-  filter {
-    name = "tag:Name"
-    values = ["${var.prefix-name-tag}panorama"]
-  }
-
-  filter {
-    name = "instance-state-name"
-    values = ["running"]
   }
 }
 
@@ -84,4 +72,8 @@ output "ngfw-mgmt-eni" {
 
 output "firewall" {
   value = aws_instance.vm-series["vmseries01"]
+}
+
+output "firewall-ip" {
+  value = aws_eip.elasticip.public_ip
 }

@@ -33,6 +33,11 @@ locals {
     for k, natgw in aws_nat_gateway.this:
       natgw.tags["Name"] => natgw.id
   }
+
+  ec2-ips = {
+    for k, address in aws_eip.ec2_eip:
+      k => address.public_ip
+  }
 }
 
 resource "aws_vpc" "this" {
@@ -244,4 +249,8 @@ output "instance_ids" {
 
 output "natgw_ids" {
   value = local.natgw_ids
+}
+
+output "instance_ips" {
+  value = local.ec2-ips
 }

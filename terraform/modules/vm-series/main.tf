@@ -34,6 +34,7 @@ resource "aws_network_interface" "this" {
 
 resource "aws_eip" "elasticip" {
   network_interface = aws_network_interface.this["vmseries01-mgmt"].id
+  vpc = true
 }
 
 resource "aws_instance" "vm-series" {

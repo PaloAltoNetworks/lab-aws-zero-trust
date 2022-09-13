@@ -187,12 +187,14 @@ resource "aws_eip" "ec2_eip" {
 
   instance = each.value.id
   #tags = merge({ Name = "${var.prefix-name-tag}${each.value.name}-eip" }, var.global_tags)
+  vpc = true
 }
 
 resource "aws_eip" "natgw_eip" {
   for_each = var.nat_gateways
 
   tags = merge({ Name = "${var.prefix-name-tag}${each.value.name}-eip" }, var.global_tags)
+  vpc = true
 }
 
 resource "aws_nat_gateway" "this" {

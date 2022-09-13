@@ -18,7 +18,9 @@ resource "aws_instance" "this" {
   tags = merge({ Name = "${var.prefix-name-tag}${var.panorama.name}" }, var.global_tags)
 }
 
-resource "aws_eip" "elasticip" {}
+resource "aws_eip" "elasticip" {
+  vpc = true
+}
 
 resource "aws_eip_association" "eip_assoc" {
   allocation_id = aws_eip.elasticip.id

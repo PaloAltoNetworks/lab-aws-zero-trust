@@ -199,7 +199,7 @@ firewall-bootstrap_options = {
   "type"                = "dhcp-client"
   "tplname"             = "VM-tempstack"
   "dgname"              = "VM-DG"
-  "vm-auth-key"         = "410447188942721"
+  "vm-auth-key"         = "190346255173364"
 }
 
 firewall-interfaces = [

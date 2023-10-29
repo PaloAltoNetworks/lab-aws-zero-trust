@@ -30,8 +30,7 @@ install_terraform
 
 # Assuming that this setup script is being run from the cloned github repo, changing the current working directory to one from where Terraform will deploy the lab resources.
 cd $(dirname $0)
-cd ..
-cd lab-aws-zero-trust/terraform/vmseries
+cd terraform/vmseries
 
 # Initialize terraform
 echo "Initializing directory for lab resource deployment"

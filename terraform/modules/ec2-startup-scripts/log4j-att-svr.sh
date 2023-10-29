@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+
 # Update hostname for better identification
 sudo hostname att-app-server
 
@@ -7,8 +9,7 @@ sudo hostname att-app-server
 sudo yum update -y
 
 # Installing Docker
-sudo amazon-linux-extras install docker
-sudo yum install docker
+sudo amazon-linux-extras install docker -y
 
 # Starting Docker
 sudo service docker start

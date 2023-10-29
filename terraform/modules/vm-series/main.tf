@@ -34,18 +34,20 @@ resource "aws_network_interface" "this" {
 
 resource "aws_eip" "elasticip" {
   network_interface = aws_network_interface.this["vmseries01-mgmt"].id
-  vpc = true
+  #vpc = true
 }
 
 resource "aws_instance" "vm-series" {
   for_each = { for firewall in var.firewalls: firewall.name => firewall }
-  ami           = data.aws_ami.pa-vm.id
-  instance_type = each.value.instance_type
+
+  ami                   = data.aws_ami.pa-vm.id
+  instance_type         = each.value.instance_type
+  ebs_optimized         = true
+
   tags          = merge({ Name = "${var.prefix-name-tag}${each.value.name}" }, var.global_tags)
 
   user_data = base64encode(join(",", compact(concat(
     [for k, v in merge(each.value.bootstrap_options, local.bootstrap_options) : "${k}=${v}"],
-    #[lookup(each.value, "bootstrap_bucket", null) != null ? "vmseries-bootstrap-aws-s3bucket=${var.buckets_map[each.value.bootstrap_bucket].name}" : null],
   ))))
 
   root_block_device {

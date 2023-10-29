@@ -53,7 +53,6 @@ resource "aws_internet_gateway" "this" {
   vpc_id  = aws_vpc.this.id
 }
 
-data "aws_region" "current" {}
 data "aws_availability_zones" "available" { state = "available" }
 
 resource "aws_subnet" "this" {
@@ -138,11 +137,11 @@ resource "aws_security_group" "this" {
 
 data "aws_ami" "latest_ecs" {
   most_recent = true
-  owners = ["591542846629"] # AWS
+  owners = ["137112412989"] # AWS
 
   filter {
       name   = "name"
-      values = ["*amazon-ecs-optimized"]
+      values = ["amzn2-ami-hvm-*-gp2"]
   }
 
   filter {
@@ -172,7 +171,7 @@ resource "aws_instance" "this" {
 
   ami                         = data.aws_ami.latest_ecs.id
   instance_type               = each.value.instance_type
-  user_data                   = file("${path.module}/${each.value.setup-file}")
+  user_data                   = file("${path.module}/../${each.value.setup-file}")
   key_name                    = data.aws_key_pair.key_name.key_name
   network_interface {
     network_interface_id = local.eni-ids["${var.prefix-name-tag}${each.value.name}-primary-interface"]
@@ -187,14 +186,12 @@ resource "aws_eip" "ec2_eip" {
 
   instance = each.value.id
   #tags = merge({ Name = "${var.prefix-name-tag}${each.value.name}-eip" }, var.global_tags)
-  vpc = true
+  #vpc = true
 }
 
 resource "aws_eip" "natgw_eip" {
   for_each = var.nat_gateways
 
-  tags = merge({ Name = "${var.prefix-name-tag}${each.value.name}-eip" }, var.global_tags)
-  vpc = true
 }
 
 resource "aws_nat_gateway" "this" {

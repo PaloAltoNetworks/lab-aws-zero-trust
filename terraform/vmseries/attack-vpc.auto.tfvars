@@ -93,7 +93,7 @@ attack-vpc-instances = [
     name           = "att-app-server"
     instance_type  = "t2.micro"
     subnet         = "subnet"
-    setup-file     = "att-app-svr.sh"
+    setup-file     = "ec2-startup-scripts/log4j-att-svr.sh"
     private_ips    = ["10.2.1.100"]
     security_group = "att-svr-sg"
   }

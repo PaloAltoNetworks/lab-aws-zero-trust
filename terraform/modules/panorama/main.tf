@@ -19,7 +19,7 @@ resource "aws_instance" "this" {
 }
 
 resource "aws_eip" "elasticip" {
-  vpc = true
+  #vpc = true
 }
 
 resource "aws_eip_association" "eip_assoc" {

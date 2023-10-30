@@ -185,7 +185,7 @@ firewalls = [
   {
     name              = "vmseries01"
     instance_type     = "m5.xlarge"
-    bootstrap_options = { "hostname" = "qwikLABS-vmseries01" }
+    bootstrap_options = { "hostname" = "vmseries01" }
     interfaces = [
       { name = "vmseries01-data", index = "0" },
       { name = "vmseries01-mgmt", index = "1" },

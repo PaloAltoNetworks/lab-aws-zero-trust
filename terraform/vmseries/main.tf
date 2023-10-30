@@ -1,36 +1,47 @@
-provider "aws" {}
 
 module "vulnerable-vpc" {
-    source           = "../modules/vpc"
-    vpc              = var.vulnerable-vpc
-    prefix-name-tag  = var.prefix-name-tag
-    subnets          = var.vulnerable-vpc-subnets
-    route-tables     = var.vulnerable-vpc-route-tables
-    security-groups  = var.vulnerable-vpc-security-groups
-    ec2-instances    = var.vulnerable-vpc-instances
-    global_tags      = var.global_tags
+  source           = "../modules/vpc"
+  vpc              = var.vulnerable-vpc
+  prefix-name-tag  = var.prefix-name-tag
+  subnets          = var.vulnerable-vpc-subnets
+  route-tables     = var.vulnerable-vpc-route-tables
+  security-groups  = var.vulnerable-vpc-security-groups
+  ec2-instances    = var.vulnerable-vpc-instances
+  global_tags      = var.global_tags
+
+  providers = {
+    aws = aws.default
+  }
 }
 
 module "attack-vpc" {
-    source          = "../modules/vpc"
-    vpc             = var.attack-vpc
-    prefix-name-tag = var.prefix-name-tag
-    subnets         = var.attack-vpc-subnets
-    route-tables    = var.attack-vpc-route-tables
-    ec2-instances   = var.attack-vpc-instances
-    security-groups = var.attack-vpc-security-groups
-    global_tags     = var.global_tags
+  source          = "../modules/vpc"
+  vpc             = var.attack-vpc
+  prefix-name-tag = var.prefix-name-tag
+  subnets         = var.attack-vpc-subnets
+  route-tables    = var.attack-vpc-route-tables
+  ec2-instances   = var.attack-vpc-instances
+  security-groups = var.attack-vpc-security-groups
+  global_tags     = var.global_tags
+
+  providers = {
+    aws = aws.default
+  }
 }
 
 module "security-vpc" {
-    source          = "../modules/vpc"
-    vpc             = var.security-vpc
-    prefix-name-tag = var.prefix-name-tag
-    subnets         = var.security-vpc-subnets
-    route-tables    = var.security-vpc-route-tables
-    security-groups = var.security-vpc-security-groups
-    nat_gateways    = var.nat_gateways
-    global_tags     = var.global_tags
+  source          = "../modules/vpc"
+  vpc             = var.security-vpc
+  prefix-name-tag = var.prefix-name-tag
+  subnets         = var.security-vpc-subnets
+  route-tables    = var.security-vpc-route-tables
+  security-groups = var.security-vpc-security-groups
+  nat_gateways    = var.nat_gateways
+  global_tags     = var.global_tags
+
+  providers = {
+    aws = aws.default
+  }
 }
 
 module "management-vpc" {
@@ -41,6 +52,10 @@ module "management-vpc" {
   route-tables    = var.management-vpc-route-tables
   security-groups = var.management-vpc-security-groups
   global_tags     = var.global_tags
+
+  providers = {
+    aws = aws.us-east-1
+  }
 }
 
 module "panorama" {
@@ -52,6 +67,10 @@ module "panorama" {
   panorama        = var.panorama
   prefix-name-tag = var.prefix-name-tag
   global_tags     = var.global_tags
+
+  providers = {
+    aws = aws.us-east-1
+  }
 }
 
 module "vm-series" {
@@ -68,6 +87,10 @@ module "vm-series" {
   bootstrap_options = var.firewall-bootstrap_options
   panorama_ip       = module.panorama.PANORAMA_IP_ADDRESS
   global_tags       = var.global_tags
+
+  providers = {
+    aws = aws.default
+  }
 }
 
 locals {
@@ -89,6 +112,10 @@ module "gwlb" {
   vpcs                  = local.vpcs
   prefix_name_tag       = var.prefix-name-tag
   global_tags           = var.global_tags
+
+  providers = {
+    aws = aws.default
+  }
 }
 
 module "transit-gateway" {
@@ -99,31 +126,34 @@ module "transit-gateway" {
   vpcs            = local.vpcs
   transit-gateway-associations = var.transit-gateway-associations
   transit-gateway-routes       = var.transit-gateway-routes
+
+  providers = {
+    aws = aws.default
+  }
 }
 
 module "vpc-routes" {
   source          = "../modules/vpc_routes"
-  vpc-routes      = merge(var.vulnerable-vpc-routes, var.attack-vpc-routes, var.security-vpc-routes, var.management-vpc-routes)
+  vpc-routes      = merge(var.vulnerable-vpc-routes, var.attack-vpc-routes, var.security-vpc-routes)
   vpcs            = local.vpcs
   tgw-ids         = module.transit-gateway.tgw-ids
   ngfw-data-eni   = module.vm-series.ngfw-data-eni
   gwlbe_ids       = module.gwlb.gwlbe_ids
   natgw_ids       = module.security-vpc.natgw_ids
   prefix-name-tag = var.prefix-name-tag
+
+  providers = {
+    aws = aws.default
+  }
 }
 
-output "PANORAMA_IP_ADDRESS" {
-  value = module.panorama.PANORAMA_IP_ADDRESS
-}
+module "vpc-routes-mgmt" {
+  source          = "../modules/vpc_routes"
+  vpc-routes      = var.management-vpc-routes
+  vpcs            = local.vpcs
+  prefix-name-tag = var.prefix-name-tag
 
-output "FIREWALL_IP_ADDRESS" {
-  value = module.vm-series.firewall-ip
-}
-
-output "VULNERABLE_APP_SERVER" {
-  value = module.vulnerable-vpc.instance_ips["vul-app-server"]
-}
-
-output "ATTACK_APP_SERVER" {
-  value = module.attack-vpc.instance_ips["att-app-server"]
+  providers = {
+    aws = aws.us-east-1
+  }
 }

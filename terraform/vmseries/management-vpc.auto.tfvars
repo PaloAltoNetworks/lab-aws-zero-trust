@@ -62,5 +62,5 @@ panorama = {
   private_ips       = ["10.4.1.100"]
   security_group    = "panorama-sg"
   instance_type     = "m5.2xlarge"
-  ami               = "ami-05e891ec5e4cbd76f"
+  ami               = "ami-0a926ff0116b451c8"
 }
